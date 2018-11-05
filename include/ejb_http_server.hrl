@@ -1,0 +1,16 @@
+-record(user_status,		{user ,status}).
+-record(online_status,		{user ,status}).
+-record(cache_info, 		{name ,cache}).
+-record(vcard_version,		{user,version,name,url,gender = <<"0">>}).
+-record(user_profile,		{user,version,mood}).
+-record(muc_vcard,			{muc_name,show_name,muc_desc,muc_title,muc_pic,version}).
+-record(rbt_info,			{name,url,body,version}).
+-record(user_rbts,			{user,rbt}).
+-record(iplimit,			{ip,user}).
+-record(ejabberd_config,	{key,val}).
+-record(domain_to_url,		{domain,url}).
+-record(user_version,{user,name,version,hire_flag,fp,sp,type,dept}).
+
+-define(USER_KEY_ERROR,  http_utils:gen_result(false, 1, <<"User key error">>,[])).
+-define(USER_INFO_ERROR, http_utils:gen_result(false, 2, <<"User info error">>,[])).
+-define(USER_INFO_ERROR, http_utils:gen_result(false, 1, <<"User info error">>,[])).
