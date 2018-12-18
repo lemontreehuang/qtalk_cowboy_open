@@ -32,8 +32,7 @@ start()
         exit 1
     else
         echo "ejb_http_server is starting..."
-        #yaws --sname "${eja_sname}" --id "${eja_id}" --heart --daemon --conf "${eja_conf}" --erlarg "${eja_erlang_opt}"
-	sudo $ERL $NAME $NODE -detached $EBIN_PATH -s ejb_http_server -smp  enable  -hidden -config ./config/lager -config ./config/ejb_http_server
+	$ERL $NAME $NODE -detached $EBIN_PATH -s ejb_http_server -smp  enable  -hidden -config ./config/lager -config ./config/ejb_http_server
     fi
 
     sleep 3
@@ -52,7 +51,7 @@ foreground()
         exit 1
     else
         echo "ejb_http_server is starting..."
-        sudo $ERL $NAME $NODE $EBIN_PATH -s ejb_http_server -noshell -smp   enable  -config ./config/lager -config ./config/ejb_http_server  
+        $ERL $NAME $NODE $EBIN_PATH -s ejb_http_server -noshell -smp   enable  -config ./config/lager -config ./config/ejb_http_server  
     fi
 
 }
@@ -60,7 +59,7 @@ foreground()
 debug() 
 {
     if is_running; then
-		sudo $ERL $NAME TEST_NODE -remsh $NODE
+		$ERL $NAME TEST_NODE -remsh $NODE
 	else
 		echo "ejb_http_server is stop"
 		exit 1
